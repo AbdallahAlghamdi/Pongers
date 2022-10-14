@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/level1Top.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/GameRules.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/background.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/opponetController.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Score.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sound/ping-pong-paddle-hitting-ball-sound-effect-32131959.mp3" type="AudioStream" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 524.512, 25.2326 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Area2D
+
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24.5, 298.5 )
+
+[node name="Level" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Niceties" type="Node" parent="."]
+
+[node name="Background" type="Sprite" parent="Niceties"]
+position = Vector2( 512, 300 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+
+[node name="Level1Top" type="Sprite" parent="Niceties/Background"]
+position = Vector2( 0.25, -56 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+
+[node name="Boundaries" type="Node" parent="."]
+
+[node name="WallTop" type="StaticBody2D" parent="Boundaries"]
+position = Vector2( -1, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/WallTop"]
+position = Vector2( 513, -28 )
+shape = SubResource( 1 )
+
+[node name="WallBottom" type="StaticBody2D" parent="Boundaries"]
+position = Vector2( 17, 616 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/WallBottom"]
+position = Vector2( 497, 14.8218 )
+shape = SubResource( 1 )
+
+[node name="PlayScoreAnim" parent="." instance=ExtResource( 7 )]
+position = Vector2( 78, 510 )
+
+[node name="EnemyScoreAnim" parent="." instance=ExtResource( 7 )]
+position = Vector2( 946, 510 )
+
+[node name="Actors" type="Node" parent="."]
+
+[node name="Ball" parent="Actors" instance=ExtResource( 5 )]
+position = Vector2( 512, 300 )
+
+[node name="Enemy" parent="Actors" instance=ExtResource( 1 )]
+light_mask = 2
+position = Vector2( 990, 309 )
+rotation = -3.14159
+collision_mask = 0
+script = ExtResource( 6 )
+
+[node name="Player" parent="Actors" instance=ExtResource( 1 )]
+light_mask = 2
+position = Vector2( 38, 308 )
+collision_mask = 0
+
+[node name="Triggers" type="Node" parent="."]
+
+[node name="WinTrigger" type="Area2D" parent="Triggers"]
+position = Vector2( 1023, 598 )
+rotation = 3.01992e-07
+script = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/WinTrigger"]
+position = Vector2( 36, -301.5 )
+shape = SubResource( 2 )
+
+[node name="LoseTrigger" type="Area2D" parent="Triggers"]
+rotation = -3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/LoseTrigger"]
+position = Vector2( 36, -301.5 )
+shape = SubResource( 2 )
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[connection signal="GameEnded" from="." to="Actors/Ball" method="_on_Level_GameEnded"]
+[connection signal="GameEnded" from="." to="Actors/Player" method="_on_Level_GameEnded"]
+[connection signal="GameStarted" from="Actors/Player" to="." method="_on_Player_GameStarted"]
+[connection signal="GameStarted" from="Actors/Player" to="Actors/Ball" method="_on_Player_GameStarted"]
+[connection signal="body_entered" from="Triggers/WinTrigger" to="." method="_on_WinTrigger_body_entered"]
+[connection signal="body_entered" from="Triggers/LoseTrigger" to="." method="_on_LoseTrigger_body_entered"]

@@ -1,0 +1,218 @@
+[gd_scene load_steps=55 format=2]
+
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Coolboi/coolBoi3.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Coolboi/coolBoi4.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Guitar/Guitar4.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Guitar/Guitar2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Guitar/Guitar3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Guitar/Guitar1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Coolboi/coolBoi1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Coolboi/coolBoi2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Start/start1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Start/start3.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Start/start4.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Start/start2.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Hewie/Hewie1.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Howard/Howard4.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Hewie/Hewie2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Hewie/Hewie3.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Howard/Howard2.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Hewie/Hewie4.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Howard/Howard3.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Howard/Howard1.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/PyschicPebbles/psychicPebbles4.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/PyschicPebbles/psychicPebbles1.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/PyschicPebbles/psychicPebbles2.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/PyschicPebbles/psychicPebbles3.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Credit/Credit3.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Credit/Credit1.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Credit/Credit2.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Credit/Credit4.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/clickme/clickme4.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Arrow/arrow2.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/clickme/clickme2.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Arrow/arrow3.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Arrow/arrow4.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/clickme/clickme3.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/clickme/clickme1.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/Arrow/arrow1.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/SolidColor.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/Wineus/Wineus2.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Wineus/Wineus3.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Wineus/Wineus4.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Wineus/Wineus1.png" type="Texture" id=42]
+[ext_resource path="res://Scenes/credit.gd" type="Script" id=43]
+[ext_resource path="res://Scripts/StartGame.gd" type="Script" id=44]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 18 ), ExtResource( 20 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 37 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 36 ), ExtResource( 32 ), ExtResource( 35 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ ExtResource( 42 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[node name="StartMenu" type="Node2D"]
+
+[node name="SolidColor" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 38 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Ball" parent="Node" instance=ExtResource( 1 )]
+position = Vector2( 117, 345 )
+script = null
+
+[node name="Guitar" type="AnimatedSprite" parent="Node"]
+position = Vector2( 801, 349 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="CoolBoi" type="AnimatedSprite" parent="Node"]
+position = Vector2( 866, 164 )
+frames = SubResource( 2 )
+frame = 3
+playing = true
+
+[node name="Start" type="AnimatedSprite" parent="Node"]
+position = Vector2( 512, 425 )
+frames = SubResource( 3 )
+frame = 3
+playing = true
+
+[node name="Button" type="Button" parent="Node/Start"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -120.0
+margin_top = -53.0
+margin_right = 118.0
+margin_bottom = 60.0
+script = ExtResource( 44 )
+
+[node name="Howard" type="AnimatedSprite" parent="Node"]
+position = Vector2( 399, 246 )
+frames = SubResource( 4 )
+playing = true
+
+[node name="Hewie" type="AnimatedSprite" parent="Node"]
+position = Vector2( 536, 244 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+
+[node name="PyschicPebbles" type="AnimatedSprite" parent="Node"]
+position = Vector2( 994, 570 )
+frames = SubResource( 6 )
+frame = 3
+playing = true
+
+[node name="Arrow" type="AnimatedSprite" parent="Node"]
+position = Vector2( 800, 540 )
+frames = SubResource( 8 )
+playing = true
+
+[node name="clickme" type="AnimatedSprite" parent="Node"]
+position = Vector2( 786, 492 )
+frames = SubResource( 9 )
+playing = true
+
+[node name="Credit" type="AnimatedSprite" parent="Node"]
+position = Vector2( 887, 568 )
+frames = SubResource( 7 )
+frame = 3
+playing = true
+
+[node name="Button" type="Button" parent="Node/Credit"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -189.0
+margin_top = -79.0
+margin_right = -60.0
+margin_bottom = -30.0
+script = ExtResource( 43 )
+
+[node name="Wineus" type="AnimatedSprite" parent="Node"]
+position = Vector2( 140, 144 )
+frames = SubResource( 10 )
+playing = true
+
+[connection signal="pressed" from="Node/Start/Button" to="Node/Start/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Node/Credit/Button" to="Node/Credit/Button" method="_on_Button_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ping-pong-paddle-hitting-ball-sound-effect-32131959.mp3-5c9586b4adcbf0e2bed0946ca3b44352.mp3str"
+
+[deps]
+
+source_file="res://Sound/ping-pong-paddle-hitting-ball-sound-effect-32131959.mp3"
+dest_files=[ "res://.import/ping-pong-paddle-hitting-ball-sound-effect-32131959.mp3-5c9586b4adcbf0e2bed0946ca3b44352.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
